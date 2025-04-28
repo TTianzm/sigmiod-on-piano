@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>🎹 Sigmoid Piano Pro</title>
+    <script src="https://unpkg.com/tone/build/Tone.js"></script>
+    <style>
+        body {
+            font-family: sans-serif;
+            text-align: center;
+            margin: 20px;
+        }
+
+        .key.black {
+            width: 30px;
+            height: 100px;
+            background: black;
+            color: white;
+            z-index: 2;
+        }
+
+        .key.white {
+            display: inline-block;
+            width: 40px;
+            height: 150px;
+            margin: 1px;
+            background: white;
+            border: 1px solid #333;
+            box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+            text-align: center;
+            line-height: 150px;
+        }
+
+
+            .key:active, .key.active {
+                background: #ffd;
+            }
+
+        .controls {
+            margin-top: 20px;
+        }
+
+        canvas {
+            border: 1px solid #999;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>🎹 Sigmoid Piano Pro</h1>
+
+    <div id="keyboard"></div>
+
+    <div class="controls">
+        <label>
+            🎛️ Sigmoid Intensity:
+            <input type="range" id="sigmoidSlider" min="-5" max="5" value="1" step="0.1" />
+            <span id="sliderValue">1</span>
+        </label>
+        <div>🎵 当前音符: <span id="noteDisplay">—</span></div>
+    </div>
+
+    <canvas id="visualizer" width="600" height="100"></canvas>
+
+    <script src="piano.js"></script>
+</body>
+</html>
